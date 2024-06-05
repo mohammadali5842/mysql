@@ -30,8 +30,8 @@ spec:
                   key: password    
           volumeMounts:
             - name: mysqlvolume
-              path: /var/lib/mysql       
+              mountPath: /var/lib/mysql       
     volumes:
       - name: mysqlvolume
-        peristanceVolumeClaims: 
+        peristentVolumeClaim: 
           claimName: mysqlpvc
