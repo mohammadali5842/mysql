@@ -1,11 +1,11 @@
 apiVersion: v1
-kind: PersistanceVolumeClaims
+kind: PersistanceVolumeClaim
 metadata:
   name: mysqlpvc
 spec:
   resources:
     requests:
-      storage: 1Gi
+      storage: 500Mi
   accessMode:
     - readWriteOnce
   storageClassName: mysqlStorageClass     
