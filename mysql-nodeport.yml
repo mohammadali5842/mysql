@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: mysqlnodeport
@@ -6,8 +6,8 @@ spec:
   selector:
     app: mysql
     version: "8.0.32"
-  type: nodeport
+  type: NodePort
   ports:
-    - port: 3306
-      targetport: 3306
-      nodePort: 31000
+  - port: 3306
+    targetPort: 3306
+    nodePort: 31000

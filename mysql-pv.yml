@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: PersistentVolume
-metadata: 
+metadata:
   name: mysqlpv
 spec:
-  storageClassName: mysqlstorageclass
+  capacity:
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  capacity:
-    storage: 1Gi     
+  storageClassName: mysqlstorageclass
   hostPath:
-    path: /u01/data    
+    path: /u01/data
