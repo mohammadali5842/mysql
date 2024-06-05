@@ -6,6 +6,6 @@ spec:
   resources:
     requests:
       storage: 500Mi
-  accessMode:
+  accessModes:
     - readWriteOnce
   storageClassName: mysqlStorageClass     
