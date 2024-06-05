@@ -7,7 +7,7 @@ spec:
   selector: 
     matchLabels:
       app: mysql
-      version: "8.032"
+      version: "8.0.32"
   template:
     metadata: 
       name: mysqlpod
