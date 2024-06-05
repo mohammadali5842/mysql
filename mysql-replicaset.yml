@@ -23,10 +23,11 @@ spec:
               containerPort: 3306
               protocol: TCP
           env:
-            valueFrom:
-              secretKeyRef:
-                name: mysqlsecret
-                key: password    
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysqlsecret
+                  key: password    
           volumeMounts:
             - name: mysqlvolume
               path: /var/lib/mysql       
