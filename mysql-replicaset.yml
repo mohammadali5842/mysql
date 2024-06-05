@@ -14,22 +14,22 @@ spec:
       labels:
         app: mysql
         version: "8.0.32"
-  spec:
-    containers:
-      - name: mysqlcontainer
-        image: mysql:8.0.32
-        ports:
-          - name: mysqlport
-            containerPort: 3306
-            protocol: TCP
-        env:
-          valueFrom:
-            secretKeyRef:
-              name: mysqlsecret
-              key: password    
-        volumeMount:
-          name: mysqlvolume
-          path: /var/lib/mysql       
+    spec:
+      containers:
+        - name: mysqlcontainer
+          image: mysql:8.0.32
+          ports:
+            - name: mysqlport
+              containerPort: 3306
+              protocol: TCP
+          env:
+            valueFrom:
+              secretKeyRef:
+                name: mysqlsecret
+                key: password    
+          volumeMount:
+            name: mysqlvolume
+            path: /var/lib/mysql       
     volume:
       name: mysqlvolume
       peristanceVolumeClaims: 
