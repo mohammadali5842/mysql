@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Replicas
+kind: Deployment
 metadata:
   name: mysqlreplica
 spec:
