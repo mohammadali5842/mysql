@@ -27,10 +27,10 @@ spec:
               secretKeyRef:
                 name: mysqlsecret
                 key: password    
-          volumeMount:
-            name: mysqlvolume
-            path: /var/lib/mysql       
-    volume:
-      name: mysqlvolume
-      peristanceVolumeClaims: 
-        claimName: mysqlStorageClass
+          volumeMounts:
+            - name: mysqlvolume
+              path: /var/lib/mysql       
+    volumes:
+      - name: mysqlvolume
+        peristanceVolumeClaims: 
+          claimName: mysqlpvc
