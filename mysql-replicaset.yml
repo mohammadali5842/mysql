@@ -11,9 +11,9 @@ spec:
   template:
     metadata: 
       name: mysqlpod
-        labels:
-          app: mysql
-          version: "8.0.32"
+      labels:
+        app: mysql
+        version: "8.0.32"
   spec:
     containers:
       - name: mysqlcontainer
