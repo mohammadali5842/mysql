@@ -9,4 +9,4 @@ spec:
     - ReadWriteOnce
   storageClassName: mysqlstorageclass
   hostPath:
-    path: /u01/data
+    path: /u01/mysqldata
