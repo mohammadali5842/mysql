@@ -1,15 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
   name: mysqlreplica
 spec:
-  replicas: 1  
-  selector: 
-    matchLabels:
+  replicas: 1
+  selector:
+    matchLabels:      
       app: mysql
       version: "8.0.32"
   template:
-    metadata: 
+    metadata:
       name: mysqlpod
       labels:
         app: mysql
@@ -19,19 +19,19 @@ spec:
         - name: mysqlcontainer
           image: mysql:8.4
           ports:
-            - name: mysqlport
-              containerPort: 3306
+            - containerPort: 3306
+              name: mysqlport
               protocol: TCP
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysqlsecret
-                  key: password    
+                  key: password
           volumeMounts:
-            - name: mysqlvolume
-              mountPath: /var/lib/mysql       
+            - mountPath: /var/lib/mysql
+              name: mysqlvolume        
       volumes:
         - name: mysqlvolume
-          persistentVolumeClaim: 
+          persistentVolumeClaim:
             claimName: mysqlpvc
